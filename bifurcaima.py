@@ -8,4 +8,4 @@ datos_y= datos[:,1]
 
 plt.figure()
 plt.plot(datos_t,datos_y)
-plt.show()
+plt.savefig("primeraimagen.pdf")
