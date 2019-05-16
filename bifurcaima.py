@@ -29,3 +29,22 @@ log=np.log(angu)
 plt.figure()
 plt.plot(log)
 plt.savefig("segundaimagen.pdf")
+
+datos3=np.loadtxt("datos3.dat", delimiter="	" )
+datos_t3= datos3[:,0]
+datos_y3= datos3[:,1]
+
+
+datos4=np.loadtxt("datos4.dat", delimiter="	" )
+datos_t4= datos4[:,0]
+datos_y4= datos4[:,1]
+
+angu5=(datos3[:,1]-datos4[:,1])
+angu6=np.abs(angu5)
+log6=np.log(angu6)
+
+plt.figure()
+plt.plot(log)
+plt.savefig("terceraimagen.pdf")
+
+#La tercera grafica queda igual a la segunda aun cuando usamos los valores mencionados en el 06-oscPoincareBifur.
