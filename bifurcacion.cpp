@@ -5,7 +5,7 @@ using namespace std;
 
 const double w0=1.0,var=0.2;
 const double h=0.1,delta=1.0;
-const double F=0.4,w=0.2;
+const double F=1.2,w=0.2;
 const int N =1000;
 
 
@@ -14,15 +14,19 @@ double f( double theta0 , double omega0 , double t ) ;
 int main( void ){
 
 double omega=1;
-double theta=0;
+double theta2=0.0;
 for (int i=0;i<N;i++) {
-	cout<<i*h<<'\t'<<theta<<'\t'<<omega<<endl;
-	omega = omega+h*f( theta , omega , i*h);
-	theta = theta+h*g( theta , omega , i*h);
+	cout<<i*h<<'\t'<<theta2<<'\t'<<omega<<endl;
+	omega = omega+h*f( theta2 , omega , i*h);
+	theta2 = theta2+h*g( theta2 , omega , i*h);
 	}
 	return 0;
+    
 }
+
 double g ( double theta0 , double omega0 , double t ) {
 	return omega0 ;}
 double f ( double theta0 , double omega0 , double t ) {
-	return -w0*w0*sin( theta0 ) - var*omega0 + F*sin( w*t+delta ) ;}
+return w0*w0*sin( theta0 ) + var*omega0 + F*sin( w*t+delta ) ;}
+
+#Se usaron valores entre 0.5 y 1.2 para generar la tercera grafica
